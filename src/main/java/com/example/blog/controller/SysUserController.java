@@ -5,7 +5,9 @@ import com.example.blog.domain.dto.SysUserDTO.UserForgetDTO;
 import com.example.blog.domain.dto.SysUserDTO.UserRegisterDTO;
 import com.example.blog.domain.dto.SysUserDTO.UserUpdateDTO;
 import com.example.blog.domain.entity.SysUser;
+import com.example.blog.domain.vo.SysUserVO;
 import com.example.blog.exceptions.BusinessException;
+import com.example.blog.mapper.SysUserMapper;
 import com.example.blog.service.SysUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -22,6 +24,8 @@ import javax.annotation.Resource;
 public class SysUserController {
     @Resource
     private SysUserService sysUserService;
+    @Resource
+    private SysUserMapper sysUserMapper;
 
     @PostMapping("/register")
     @ApiOperation(value = "注册用户",notes = "注册用户")
@@ -60,5 +64,10 @@ public class SysUserController {
     @ApiOperation(value = "用户登出",notes = "用户登出")
     public ResponseEntity logout() {
         return ResponseEntity.ok("登出成功");
+    }
+
+    @GetMapping("/get")
+    public SysUserVO get(){
+        return sysUserMapper.selectNickNameById();
     }
 }

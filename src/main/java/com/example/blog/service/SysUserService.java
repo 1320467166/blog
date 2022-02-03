@@ -20,8 +20,9 @@ public class SysUserService extends ServiceImpl<SysUserMapper, SysUser> {
     @Resource
     private SysUserMapper sysUserMapper;
 
+
     public void register(UserRegisterDTO userRegisterDTO) {
-        //用户名唯一性校验
+/*        //用户名唯一性校验 不等于null
         if (!ObjectUtils.isEmpty(sysUserMapper.selectByUserName(userRegisterDTO.getUserName()))) {
             throw new BusinessException("该用户名已被使用，请重新输入！");
         }
@@ -30,7 +31,7 @@ public class SysUserService extends ServiceImpl<SysUserMapper, SysUser> {
         queryWrapper.eq("phone", userRegisterDTO.getPhone());
         if (!ObjectUtils.isEmpty(sysUserMapper.selectOne(queryWrapper))) {
             throw new BusinessException("该手机号已被使用，请重新输入！");
-        }
+        }*/
         SysUser sysUser = new SysUser();
         BeanUtils.copyProperties(userRegisterDTO, sysUser);
         sysUserMapper.insert(sysUser);
@@ -60,4 +61,6 @@ public class SysUserService extends ServiceImpl<SysUserMapper, SysUser> {
         //发送短信 TODO
         sysUserMapper.updateById(sysUser);
     }
+
+
 }
