@@ -1,9 +1,11 @@
 package com.example.blog.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.example.blog.domain.dto.SysUserDTO.UserForgetDTO;
-import com.example.blog.domain.dto.SysUserDTO.UserRegisterDTO;
-import com.example.blog.domain.dto.SysUserDTO.UserUpdateDTO;
+import com.example.blog.domain.dto.email.EmailDTO;
+import com.example.blog.domain.dto.sysUser.UserForgetDTO;
+import com.example.blog.domain.dto.sysUser.UserQueryDTO;
+import com.example.blog.domain.dto.sysUser.UserRegisterDTO;
+import com.example.blog.domain.dto.sysUser.UserUpdateDTO;
 import com.example.blog.domain.entity.SysUser;
 import com.example.blog.exceptions.BusinessException;
 import com.example.blog.service.SysUserService;
@@ -22,6 +24,13 @@ import javax.annotation.Resource;
 public class SysUserController {
     @Resource
     private SysUserService sysUserService;
+
+    @PostMapping("/validate")
+    @ApiOperation(value = "发送注册验证码",notes = "发送注册验证码")
+    public ResponseEntity validate(@Validated @RequestBody EmailDTO emailDTO) {
+        sysUserService.validate(emailDTO);
+        return ResponseEntity.ok("发送成功");
+    }
 
     @PostMapping("/register")
     @ApiOperation(value = "注册用户",notes = "注册用户")
@@ -60,5 +69,11 @@ public class SysUserController {
     @ApiOperation(value = "用户登出",notes = "用户登出")
     public ResponseEntity logout() {
         return ResponseEntity.ok("登出成功");
+    }
+
+    @GetMapping("/query")
+    @ApiOperation(value = "用户查询",notes = "用户查询")
+    public ResponseEntity query(UserQueryDTO queryDTO) {
+        return ResponseEntity.ok(sysUserService.selectByPage(queryDTO));
     }
 }

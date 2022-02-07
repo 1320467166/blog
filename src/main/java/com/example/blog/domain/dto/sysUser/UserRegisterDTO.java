@@ -1,9 +1,10 @@
-package com.example.blog.domain.dto.SysUserDTO;
+package com.example.blog.domain.dto.sysUser;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Data
@@ -35,4 +36,12 @@ public class UserRegisterDTO {
     @NotBlank(message = "电话号码不可为空")
     @Size(max = 11,message = "电话号码最多支持11位数")
     private String phone;
+
+    @ApiModelProperty(name = "邮箱地址",notes = "邮箱地址")
+    @NotNull(message = "邮箱不可为空")
+    private String[] email;
+
+    @ApiModelProperty(name = "验证码",notes = "验证码")
+    @NotBlank(message = "验证码不可为空")
+    private String code;
 }

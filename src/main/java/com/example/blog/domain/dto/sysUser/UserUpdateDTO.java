@@ -1,4 +1,4 @@
-package com.example.blog.domain.dto.SysUserDTO;
+package com.example.blog.domain.dto.sysUser;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
