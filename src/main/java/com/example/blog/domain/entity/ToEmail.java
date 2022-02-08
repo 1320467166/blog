@@ -1,4 +1,4 @@
-package com.example.blog.config;
+package com.example.blog.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

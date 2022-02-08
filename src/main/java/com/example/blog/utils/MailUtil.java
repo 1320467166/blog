@@ -1,6 +1,6 @@
 package com.example.blog.utils;
 
-import com.example.blog.config.ToEmail;
+import com.example.blog.domain.entity.ToEmail;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.MailException;

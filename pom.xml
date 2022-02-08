@@ -86,8 +86,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-<!--		&lt;!&ndash;thymeleaf模板依赖&ndash;&gt;
-		<dependency>
+		<!--thymeleaf模板依赖-->
+<!--		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>-->
@@ -118,8 +118,8 @@
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.14</version>
 		</dependency>
-<!--		&lt;!&ndash;Liquibase&ndash;&gt;
-		<dependency>
+		<!--Liquibase-->
+<!--		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
 		</dependency>-->
@@ -128,6 +128,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
+<!--		&lt;!&ndash;activity相关依赖&ndash;&gt;
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring-boot-starter-basic</artifactId>
+			<version>6.0.0</version>
+		</dependency>-->
 	</dependencies>
 
 	<build>

@@ -36,3 +36,12 @@ spring:
             required: true
 swagger:
   enable: true
+  # activiti default configuration
+#activiti:
+  #database-schema-update: true
+  #check-process-definitions: true
+  #process-definition-location-prefix: classpath:/processes/
+  #    process-definition-location-suffixes:
+  #      - **.bpmn
+  #      - **.bpmn20.xml
+  #history-level: full

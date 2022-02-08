@@ -3,7 +3,7 @@ package com.example.blog.service;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.blog.config.ToEmail;
+import com.example.blog.domain.entity.ToEmail;
 import com.example.blog.domain.dto.email.EmailDTO;
 import com.example.blog.domain.dto.sysUser.UserForgetDTO;
 import com.example.blog.domain.dto.sysUser.UserQueryDTO;
